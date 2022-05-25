@@ -1,0 +1,119 @@
+@media (min-width: 320px) {
+    .promo {
+        position: relative;
+
+        &-img {
+            position: relative;
+            &>img {
+                width: 100%;
+            }
+
+            &__index {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 26px;
+                left: 15px;
+                bottom: 15px;
+                background: #FFFFFF;
+                border-radius: 50px;
+            }
+        }
+
+        &-back {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: #FAFAFA;
+            border-radius: 5px;
+        }
+
+        &-like {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: #FAFAFA;
+            border-radius: 5px;
+        }
+
+        &-descr {
+            margin-top: 15px;
+            width: 100%;
+
+            &__retail {
+                &--text {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #626262;
+                }
+
+                .price {
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 28px;
+                    color: #FF3157;
+                }
+
+                .old-price {
+                    text-decoration: line-through 2px #FF3157;
+                    margin-left: 15px;
+                    font-weight: 500;
+                    font-size: 22px;
+                    line-height: 26px;
+                    color: #CDCDCD;
+                }
+            }
+
+            &__wholesale {
+                margin-top: 15px;
+                &--text {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #626262;
+                }
+
+                .price {
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 28px;
+                    color: #0A0A0A;
+                }
+            }
+
+            &__btn {
+                margin-top: 15px;
+                width: 100%;
+                height: 40px;
+                background: #EBF2FF;
+                border-radius: 5px;
+                border: none;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 21px;
+                text-align: center;
+                color: $main-color;
+            }
+        }
+
+        &-line {
+            margin-top: 20px;
+            width: 100%;
+            height: 0px;
+            border: 1px solid #EEEEEE;
+        }
+    }
+}
