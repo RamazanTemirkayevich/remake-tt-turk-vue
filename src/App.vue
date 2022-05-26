@@ -23,7 +23,7 @@ export default {
     Promo,
     Description,
     Carousel,
-    Review  
+    Review,
   }
 }
 </script>

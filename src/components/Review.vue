@@ -57,6 +57,78 @@
                     <a class="review-box__container--btn">Write a review</a>
                 </div>
             </div>
+
+            <h2 class="review-title">Reviews and ratings<span>(25)</span></h2>
+
+            <select name="" id="">
+                <option value="">Helpful first</option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+
+            <div class="review-images">
+                <p class="review-images__title">Buyer Photos</p>
+                
+                <div class="review-images__items">
+                    <swiper class="review-swiper"
+                        :slides-per-view="2.5"
+                        :space-between="30"
+                        @swiper="onSwiper"
+                        @slideChange="onSlideChange"
+                    >
+                        <swiper-slide class="review-swiper__slide">
+                            <Review-images
+                                v-for="img in images"
+                                v-bind:key="img.item"
+                                :img_data="img"
+                            />
+                        </swiper-slide>
+
+                    </swiper>
+                </div>
+            </div>
+
+            <div class="review-comments">
+                <div class="review-comments__first"></div>
+                <div class="review-comments__second"></div>
+            </div>
         </section>
     </div>
 </template>
+
+<script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import ReviewImages from './Review-images.vue'
+
+export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+        ReviewImages
+    },
+    data() {
+        return {
+            images: [
+                {
+                    item: "image44.png"
+                },
+                {
+                    item: "image48.png"
+                },
+                {
+                    item: "image49.png"
+                },
+                {
+                    item: "image50.png"
+                },
+                {
+                    item: "image44.png"
+                },
+                {
+                    item: "image48.png"
+                }
+            ]
+        }
+    }
+}
+</script>
