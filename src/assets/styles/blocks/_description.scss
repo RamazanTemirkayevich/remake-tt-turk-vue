@@ -1,0 +1,110 @@
+@media (min-width: 320px) {
+    .description {
+        margin-top: 20px;
+        width: 100%;
+
+        &-title {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: #0A0A0A;
+        }
+
+        &-text {
+            width: 100%;
+
+            &__title {
+                margin-top: 15px;
+                font-size: 16px;
+                line-height: 22px;
+                color: #404040;
+
+                .hide-text {
+                    display: none;
+                }
+            }
+        }
+
+        &-show {
+            margin-top: 5px;
+            font-size: 14px;
+            line-height: 16px;
+            color: $main-color;
+            text-decoration: underline dotted;
+        }
+
+        &-line {
+            margin-top: 20px;
+            width: 100%;
+            height: 0px;
+            border: 1px solid #EEEEEE;
+        }
+
+        &-characteristics {
+            margin-top: 20px;
+
+            &__items {
+                margin-top: 15px;
+
+                &>p {
+                    margin-top: 10px;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: $gray-color;
+                }
+
+                &>span {
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: #404040;
+                }
+
+                &>hr {
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 0px;
+                    border: 1px solid #EEEEEE;
+                }
+
+                .hide-characteristics {
+                    display: none;
+
+                    &>p {
+                        margin-top: 10px;
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: $gray-color;
+                    }
+    
+                    &>span {
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #404040;
+                    }
+    
+                    &>hr {
+                        margin-top: 20px;
+                        width: 100%;
+                        height: 0px;
+                        border: 1px solid #EEEEEE;
+                    }
+                }
+
+                .characteristics-show {
+                    margin-top: 15px;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: $main-color;
+                    text-decoration: underline dotted;
+                }
+
+                &>hr {
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 0px;
+                    border: 1px solid #EEEEEE;
+                }
+            }
+        }
+    }
+}

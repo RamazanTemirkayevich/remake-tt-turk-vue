@@ -1,0 +1,133 @@
+@media (min-width: 320px) {
+    .review {
+        margin-top: 20px;
+
+
+        &-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 289px;
+            border: 1px solid #EEEEEE;
+            border-radius: 5px;
+
+            &__container {
+                width: 90%;
+                height: 266px;
+
+                &--raiting {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .raiting-stars {
+                        width: 143px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .raiting-grade {
+                        font-weight: 700;
+                        font-size: 22px;
+                        line-height: 26px;
+                        color: #0A0A0A;
+                    }
+                }
+
+                .line {
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 0px;
+                    border: 1px solid #EEEEEE;
+                }
+
+                &--bar {
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 135px;
+
+                    .bar-item {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        &>p {
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: $gray-color;
+                        }
+
+                        &__line {
+                            width: 70%;
+                            height: 10px;
+                            background: #EEEEEE;
+                            border-radius: 10px;
+
+                            .progresive {
+                                width: 146px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+        
+                            .progresive-second {
+                                width: 63px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+        
+                            .progresive-third {
+                                width: 75px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+        
+                            .progresive-fourth {
+                                width: 14px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+        
+                            .progresive-fifth {
+                                width: 0px;
+                                height: 10px;
+                                background: $main-color;
+                                border-radius: 10px 0px 0px 10px;
+                            }
+                        }
+
+                        &>span {
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: #0A0A0A;
+                        }
+                    }
+                }
+
+                &--btn {
+                    margin-top: 20px;
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+                    background: $main-color;
+                    border-radius: 5px;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 23px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}

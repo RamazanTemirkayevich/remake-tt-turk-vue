@@ -7,11 +7,15 @@
                 </div>
                 <div class="header-nav__btns">
                     <div class="btns-settings">
-                        <img src="@/assets/icons/settings.svg" alt="">
+                        <a href="#">
+                            <img src="@/assets/icons/settings.svg" alt="">
+                        </a>
                     </div>
                     <div class="btns-admin">
-                        <img src="@/assets/icons/admin.svg" alt="">
-                        <p>Log in</p>
+                        <a href="#">
+                            <img src="@/assets/icons/admin.svg" alt="">
+                            Log in
+                        </a>
                     </div>
                 </div>
             </div>

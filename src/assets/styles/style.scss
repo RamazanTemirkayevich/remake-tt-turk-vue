@@ -1,5 +1,9 @@
 @import './blocks/header';
 @import './blocks/promo';
+@import './blocks/description';
+@import './blocks/carousel';
+@import './blocks/carouselitem';
+@import './blocks/review';
 
 @import './base.scss';
 
@@ -26,6 +30,7 @@ ul {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 @media (min-width: 320px) {
