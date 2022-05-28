@@ -93,10 +93,12 @@
     ],
     "users": [
       {
-        "id": "Jack S."
+        "id": "Jack S.",
+        "img": "account1.png"
       },
       {
-        "id": "Marry J."
+        "id": "Marry J.",
+        "img": "account2.png"
       }
     ]
   }

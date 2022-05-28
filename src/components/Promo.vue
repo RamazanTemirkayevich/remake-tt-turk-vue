@@ -1,7 +1,15 @@
 <template>
     <section class="promo">
         <div class="promo-img">
-            <img src="@/assets/image44.png" alt="">
+            <swiper
+                :navigation="true"
+                :modules="modules"
+                class="mySwipe swiperr"
+            >
+                <swiper-slide class="swiper-slide" v-for="items in images" :key="items.id">
+                    <img :src="items.item">
+                </swiper-slide>
+            </swiper>
             <div class="promo-img__index">
                 <span>1</span>/<span>4</span>
             </div>
@@ -91,3 +99,41 @@
         </div>
     </section>
 </template>
+
+<script>
+import { Swiper, SwiperSlide } from "swiper/vue"
+
+import { Pagination, Navigation } from "swiper"
+export default {
+    components: {
+        Swiper,
+        SwiperSlide
+    },
+    setup() {
+        return {
+        modules: [Pagination, Navigation],
+        };
+    },
+    data() {
+        return {
+            images: [
+                {   id: 1,
+                    item: require("../assets/image44.png")
+                },
+                {
+                    id: 2,
+                    item: require("../assets/column_img/image48.png")
+                },
+                {
+                    id: 3,
+                    item: require("../assets/column_img/image49.png")
+                },
+                {
+                    id: 4,
+                    item: require("../assets/column_img/image50.png")
+                }
+            ]
+        }
+    }
+}
+</script>

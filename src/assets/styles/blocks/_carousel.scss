@@ -10,10 +10,14 @@
         }
 
         &-container {
+            width: 100%;
             margin-top: 15px;
 
             .swiper {
+                overflow: auto;
+                
                 &-slide {
+                    margin-right: 0;
                     display: flex;
                 }
             }

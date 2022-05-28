@@ -76,12 +76,10 @@
                         @swiper="onSwiper"
                         @slideChange="onSlideChange"
                     >
-                        <swiper-slide class="review-swiper__slide">
-                            <Review-images
-                                v-for="img in images"
-                                v-bind:key="img.item"
-                                :img_data="img"
-                            />
+                        <swiper-slide v-for="img in images" :key="img.id" class="review-swiper__slide">
+                            <div class="images">
+                                <img :src="img.item" alt="">
+                            </div>
                         </swiper-slide>
 
                     </swiper>
@@ -89,43 +87,50 @@
             </div>
 
             <div class="review-comments">
-                <div class="review-comments__first"></div>
-                <div class="review-comments__second"></div>
+                <div class="review-comments__user">
+                    <Users/>                    
+                </div>
             </div>
         </section>
     </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import ReviewImages from './Review-images.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import Users from './Users.vue'
 
 export default {
     components: {
         Swiper,
         SwiperSlide,
-        ReviewImages
+        Users 
     },
     data() {
         return {
             images: [
                 {
-                    item: "image44.png"
+                    id: 1,
+                    item: require("../assets/column_img/image44.png")
                 },
                 {
-                    item: "image48.png"
+                    id: 2,
+                    item: require("../assets/column_img/image48.png")
                 },
                 {
-                    item: "image49.png"
+                    id: 3,
+                    item: require("../assets/column_img/image49.png")
                 },
                 {
-                    item: "image50.png"
+                    id: 4,
+                    item: require("../assets/column_img/image50.png")
                 },
                 {
-                    item: "image44.png"
+                    id: 5,
+                    item: require("../assets/column_img/image44.png")
                 },
                 {
-                    item: "image48.png"
+                    id: 6,
+                    item: require("../assets/column_img/image48.png")
                 }
             ]
         }

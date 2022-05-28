@@ -149,7 +149,7 @@
 
         &>select {
             margin-top: 10px;
-            width: 290px;
+            width: 100%;
             height: 40px;
             border: 2px solid #EEEEEE;
             border-radius: 3px;
@@ -178,8 +178,8 @@
 
                 .review-swiper {
                     &__slide {
-                        display: flex;
-
+                        margin-right: 0;
+                        
                         .images {
                             display: flex;
                             justify-content: center;
@@ -190,7 +190,127 @@
                             border-radius: 2.6738px;
 
                             &>img {
+                                width: 92%;
+                                border-radius: 2.6738px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-comments {
+            margin-top: 25px;
+
+            &__user {
+                display: flex;
+                flex-direction: column;
+
+                .user {
+                    margin-top: 25px;
+
+                    &-name {
+                        display: flex;
+                        flex-direction: row;
+
+                        &__img {
+                            width: 50px;
+    
+                            &>img {
                                 width: 100%;
+                            }
+                        }
+
+                        &__title {
+                            margin-left: 10px;
+                            display: flex;
+                            align-items: baseline;
+                            width: 202px;
+                            flex-wrap: wrap;
+
+                            &--name {
+                                width: 100%;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 21px;
+                                color: #0A0A0A;
+                            }
+
+                            &--stars {
+                                width: 87px;
+                                height: 14px;
+                                display: flex;
+                                justify-content: space-between;
+
+                                &>img {
+                                    width: 13px;
+                                    height: 12px;
+                                }
+                            }
+
+                            &--date {
+                                margin-left: 10px;
+                                font-size: 14px;
+                                line-height: 16px;
+                                color: $gray-color;
+                            }
+                        }
+                        &__text {
+                            margin-top: 15px;
+
+                            &--advantages {
+                                font-size: 16px;
+                                line-height: 20px;
+                                color: #404040;
+
+                                &>span {
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    color: #0A0A0A;
+                                    color: $gray-color;
+                                }
+                            }
+
+                            &--disadvantages {
+                                margin-top: 10px;
+                                font-size: 16px;
+                                line-height: 20px;
+                                color: #404040;
+
+                                &>span {
+                                    font-size: 16px;
+                                    line-height: 20px;
+                                    color: $gray-color;
+                                }
+                            }
+
+                            &--title {
+                                margin-top: 10px;
+                                font-size: 16px;
+                                line-height: 20px;
+                                color: #404040;
+                            }
+                        }
+
+                        &__images {
+                            margin-top: 15px;
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-between;
+
+                            &--item {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 50px;
+                                height: 64.71px;
+                                border: 2px solid #EEEEEE;
+                                border-radius: 5px;
+
+                                &>img {
+                                    width: 97%;
+                                    border-radius: 5px;
+                                }
                             }
                         }
                     }

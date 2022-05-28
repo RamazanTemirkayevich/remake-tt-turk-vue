@@ -5,17 +5,29 @@
 
             <div class="carousel-container">
                 <swiper class="swiper"
+                    :scrollbar="{
+                    hide: true,
+                    }"
+                    :modules="modules"
                     :slides-per-view="2.5"
                     :space-between="50"
                     @swiper="onSwiper"
                     @slideChange="onSlideChange"
                 >
-                    <swiper-slide class="swiper-slide">
-                        <CarouselItem
-                            v-for="product in products"
-                            v-bind:key="product.price"
-                            :product_data="product"
-                        />
+                    <swiper-slide style="margin-right: 0px:"
+                        v-for="product in products"
+                        :key="product.id"
+                    >
+                        <div class="carousel-item">
+                            <div class="carousel-item__img">
+                                <img :src=" require('../assets/slide_img/' + product.image)" alt="">
+                            </div>
+                            <div class="carousel-item__descr">
+                                <span class="carousel-item__descr--price">{{ product.price }} $ <span>{{ product.oldprice }} $</span></span>
+                                <p class="carousel-item__descr--text">{{ product.name }}</p>
+                                <a href="#" class="carousel-item__descr--link">{{ product.link }}</a>
+                            </div>
+                        </div>
                     </swiper-slide>
                     ...
                 </swiper>
@@ -27,27 +39,28 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import CarouselItem from './CarouselItem.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Scrollbar } from "swiper"
 
   export default {
     components: {
       Swiper,
-      SwiperSlide,
-      CarouselItem
+      SwiperSlide
     },
     props: {},
     data() {
         return {
             products: [
                 {
+                    id: 1,
                     image: "image36.png",
                     price: 810.15,
                     oldprice: 846.99,
-                    name: "Smartphone Apple iPhone 11 64GB, red",
+                    name: "Smartphone Apple iPhone 11 64GB, Red",
                     link: "Best jeans store"
                 },
                 {
+                    id: 2,
                     image: "image33.png",
                     price: 910.15,
                     oldprice: 890.89,
@@ -55,13 +68,15 @@ import CarouselItem from './CarouselItem.vue'
                     link: "Best jeans store"
                 },
                 {
+                    id: 3,
                     image: "image31.png",
                     price: 820.15,
                     oldprice: 646.99,
-                    name: "Smartphone Apple iPhone 11 64GB, black",
+                    name: "Smartphone Apple iPhone 11 64GB, Black",
                     link: "Best jeans store"
                 },
                 {
+                    id: 4,
                     image: "image34.png",
                     price: 410.15,
                     oldprice: 546.99,
@@ -69,6 +84,7 @@ import CarouselItem from './CarouselItem.vue'
                     link: "Best jeans store"
                 },
                 {
+                    id: 5,
                     image: "image33.png",
                     price: 910.15,
                     oldprice: 890.89,
@@ -76,6 +92,7 @@ import CarouselItem from './CarouselItem.vue'
                     link: "Best jeans store"
                 },
                 {
+                    id: 6,
                     image: "image36.png",
                     price: 810.15,
                     oldprice: 846.99,
@@ -95,6 +112,7 @@ import CarouselItem from './CarouselItem.vue'
       return {
         onSwiper,
         onSlideChange,
+        modules: [Scrollbar],
       };
     },
   };

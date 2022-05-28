@@ -4,8 +4,16 @@
 
         &-img {
             position: relative;
-            &>img {
+
+            .swiper {
                 width: 100%;
+
+                &-slide {
+                    &>img {
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
             }
 
             &__index {
@@ -19,6 +27,7 @@
                 bottom: 15px;
                 background: #FFFFFF;
                 border-radius: 50px;
+                z-index: 1;
             }
         }
 
@@ -33,6 +42,7 @@
             height: 30px;
             background: #FAFAFA;
             border-radius: 5px;
+            z-index: 1;
         }
 
         &-like {
@@ -46,6 +56,7 @@
             height: 30px;
             background: #FAFAFA;
             border-radius: 5px;
+            z-index: 1;
         }
 
         &-descr {
