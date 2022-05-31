@@ -14,7 +14,7 @@
                     @swiper="onSwiper"
                     @slideChange="onSlideChange"
                 >
-                    <swiper-slide style="margin-right: 0px:"
+                    <swiper-slide style="width: 135px; margin-right: 0px;"
                         v-for="product in products"
                         :key="product.id"
                     >
@@ -93,6 +93,38 @@ import { Scrollbar } from "swiper"
                 },
                 {
                     id: 6,
+                    image: "image36.png",
+                    price: 810.15,
+                    oldprice: 846.99,
+                    name: "Smartphone Apple iPhone 11 64GB, red",
+                    link: "Best jeans store"
+                },
+                {
+                    id: 7,
+                    image: "image31.png",
+                    price: 810.15,
+                    oldprice: 846.99,
+                    name: "Smartphone Apple iPhone 11 64GB, red",
+                    link: "Best jeans store"
+                },
+                {
+                    id: 8,
+                    image: "image33.png",
+                    price: 810.15,
+                    oldprice: 846.99,
+                    name: "Smartphone Apple iPhone 11 64GB, red",
+                    link: "Best jeans store"
+                },
+                {
+                    id: 9,
+                    image: "image34.png",
+                    price: 810.15,
+                    oldprice: 846.99,
+                    name: "Smartphone Apple iPhone 11 64GB, red",
+                    link: "Best jeans store"
+                },
+                {
+                    id: 10,
                     image: "image36.png",
                     price: 810.15,
                     oldprice: 846.99,
