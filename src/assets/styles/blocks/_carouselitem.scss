@@ -8,16 +8,43 @@
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
-            width: 135px;
+            width: 100%;
             height: 157px;
             background: #FFFFFF;
             border: 1px solid #EEEEEE;
             border-radius: 5px;
+            position: relative;
 
             &>img {
                 object-fit: contain;
                 width: 89px;
                 height: 122px;
+            }
+
+            &--sale {
+                position: absolute;
+                width: 30px;
+                height: 14px;
+                left: 5px;
+                bottom: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #FF3157;
+                border-radius: 3px;
+
+                &>span {
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #FFFFFF;
+                }
+            }
+
+            &--favorite {
+                position: absolute;
+                top: 8px;
+                right: 8px;
             }
         }
 
@@ -59,7 +86,19 @@
         }
     }
 
-    .carousel-item {
+    .carousel-item:first-child {
         margin-left: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel-item {
+        width: 187px;
+        margin-right: unset;
+
+        &__img {
+            width: 100%;
+            height: 225px;
+        }
     }
 }

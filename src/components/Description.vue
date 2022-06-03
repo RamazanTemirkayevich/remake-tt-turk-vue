@@ -4,9 +4,8 @@
             <h2 class="description-title">Description</h2>
             <div class="description-text">
                 <p class="description-text__title">
-                    Basic slim jeans with a regular fit. Closure and belt loops with contrast stitching. The 
-                    <span class="hide-text">
-                        yoke at the back provides a perfect fit on the hips. Aged denim, with bleached spots and moderate fading, immediately grabs attention. Slightly narrowed at the bottom, the model tightly fits the figure, visually stretches the silhouette and slims. Durable denim is breathable, non-irritating, hygroscopic, easy to clean and practical. These jeans are comfortable all day long. A versatile casual piece, perfect for city life. Skinny basic jeans look great with fitted shirts and oversized shirts, jumpers and T-shirts. Shoes will suit them very different - from sports sneakers and sneakers to lace-up boots or brogues. Slim jeans are a practical and comfortable option that should definitely be in your wardrobe.
+                    Basic slim jeans with a regular fit. Closure and belt loops with contrast stitching. The <span class="hide-text">
+                    yoke at the back provides a perfect fit on the hips. Aged denim, with bleached spots and moderate fading, immediately grabs attention. Slightly narrowed at the bottom, the model tightly fits the figure, visually stretches the silhouette and slims. Durable denim is breathable, non-irritating, hygroscopic, easy to clean and practical. These jeans are comfortable all day long. A versatile casual piece, perfect for city life. Skinny basic jeans look great with fitted shirts and oversized shirts, jumpers and T-shirts. Shoes will suit them very different - from sports sneakers and sneakers to lace-up boots or brogues. Slim jeans are a practical and comfortable option that should definitely be in your wardrobe.
                     </span> 
                 </p>
             </div>
@@ -64,7 +63,25 @@
 
                     <hr>
                 </div>
+                <div class="description-characteristics__box">
+                    <div class="box-items">
+                        <Characteristics/>
+                    </div>
+                    <div class="box-items">
+                        <Characteristics/>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 </template>
+
+<script>
+import Characteristics from './Characterisctics.vue'
+
+export default {
+    components: {
+        Characteristics
+    }
+}
+</script>

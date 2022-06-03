@@ -107,6 +107,61 @@
                             <p class="amount">12451 pcs. in stock</p>
                         </div>
                     </div>
+                    <div class="promo-delivery">
+                        <div class="promo-delivery-container">
+                            <p class="promo-delivery-container__price">Delivery: 5,25 $</p>
+                            <select name="delivery" id="">
+                                <option value="1">To Isnabbul via PONNY EXPRESS</option>
+                            </select>
+                            <p class="promo-delivery-container__time">Estimated delivery time: 
+                                <span>25/08</span>
+                                <img src="@/assets/icons/question.svg" alt="">
+                            </p>
+                        </div>
+                    </div>
+                    <a href="#" class="promo-detail">View detailed characteristics</a>
+                </div>
+
+                <div class="promo-blocks">
+                    <div class="promo-price-desktop">
+                        <div class="promo-price-desktop__container">
+                            <div class="promo-price-desktop__retail">
+                                <p class="promo-price-desktop__retail--text">Retail price</p>
+                                <span class="price">14,25 $</span> <span class="old-price">15,35 $</span>
+                            </div>
+                            <div class="promo-price-desktop__wholesale">
+                                <p class="promo-price-desktop__wholesale--text">Wholesale price</p>
+                                <span class="price">12,50 $</span>
+                            </div>
+                            <a href="#" class="promo-price-desktop__buy">
+                                Add to Shopping Cart
+                            </a>
+                            <a class="promo-price-desktop__btn">
+                                Buy now
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="promo-brand-desktop">
+                        <div class="promo-brand-desktop__container">
+                            <div class="brand-img">
+                                <img src="@/assets/look.png" alt="">
+                            </div>
+                            <div class="brand-title">
+                                <p class="brand-title__name">New Look</p>
+                                <div class="brand-title__items">
+                                    <div class="brand-title__items--raiting">
+                                        <img src="@/assets/icons/star-active-desk.svg">
+                                        <img src="@/assets/icons/star-active-desk.svg">
+                                        <img src="@/assets/icons/star-active-desk.svg">
+                                        <img src="@/assets/icons/star-desk.svg">
+                                        <img src="@/assets/icons/star-desk.svg">
+                                    </div>
+                                    <span>3.5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <hr class="promo-line">

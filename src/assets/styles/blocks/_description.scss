@@ -105,6 +105,118 @@
                     border: 1px solid #EEEEEE;
                 }
             }
+
+            &__box {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .description {
+        margin-top: 75px;
+
+        &-title {
+            font-size: 28px;
+        }
+
+        &-text {
+            width: 95%;
+
+            &__title {
+                font-size: 20px;
+                line-height: 30px;
+
+                .hide-text {
+                    display: block;
+                }
+            }
+        }
+
+        &-show, &-line {
+            display: none;
+        }
+
+        &-characteristics {
+            margin-top: 75px;
+
+            &__title {
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 32px;
+                color: #0A0A0A;               
+            }
+
+            &__items {
+                display: none;
+            }
+
+            &__box {
+                display: flex;
+                width: 91%;
+                justify-content: space-between;
+
+                .box-items {
+                    margin-top: 25px;
+                    width: 610px;
+
+                    &>dl {
+                        margin-top: 10px;
+                        align-items: start;
+                        display: flex;
+                        align-items: end;
+                        flex-wrap: wrap;
+                        width: 100%;
+
+                        &>dt {
+                            width: 50%;
+                            position: relative;
+
+                            &>span {
+                                position: inherit;
+                                display: inline;
+                                align-items: flex-start;
+                                font-size: 18px;
+                                line-height: 21px;
+                                height: 21px;
+                                border-bottom: none;
+                                color: $gray-color;
+                                background: #FFFFFF;
+                            }
+                        }
+
+                        &>dt::before {
+                            border-bottom: 1px dotted $gray-color;
+                            bottom: 0.2em;
+                            content: "";
+                            display: block;
+                            left: 0;
+                            position: absolute;
+                            width: 100%;
+                        }
+
+                        &>dd {
+                            &>span {
+                                position: relative;
+                                font-size: 18px;
+                                line-height: 21px;
+                                color: #0A0A0A;
+                            }
+                        }
+                    }
+
+                    &>dl:first-child {
+                        margin-top: 0;
+                    }
+                }
+
+                .box-items:last-child {
+                    &>dl:last-child {
+                        display: none;
+                    }
+                }
+            }
         }
     }
 }
