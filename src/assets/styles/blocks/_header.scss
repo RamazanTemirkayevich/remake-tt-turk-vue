@@ -92,6 +92,7 @@
                 &>input {
                     width: 86%;
                     height: 100%;
+                    border-radius: 5px;
                     border: none;
                     text-indent: 14px;
                 }
@@ -133,19 +134,26 @@
 
 @media (min-width: 1024px) {
     .header {
+        &-container {
+            margin-left: 78px;
+            margin-right: 82px;
+        }
+
         &-nav {
             display: none;
         }
 
         &-nav--desk {
-            padding-top: 10px;
             display: flex;
             justify-content: end;
 
             &__list {
                 display: flex;
-                width: 350px;
+                width: 423px;
+                height: 35px;
                 justify-content: space-between;
+                align-items: center;
+                margin-right: 8px;
 
                 &-link {
                     &>a {
@@ -160,7 +168,6 @@
         &-search {
             display: flex;
             width: 100%;
-            justify-content: space-between;
             align-items: center;
 
             &__logo {
@@ -171,44 +178,52 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                margin-left: 15px;
                 width: 75px;
                 height: 39px;
                 background: $main-color;
                 border-radius: 5px;
             }
 
-            &__form {
-                width: 400px;
+            &>form {
+                margin-left: 15px;
+                width: 50%;
 
-                &>select {
-                    position: inherit;
-                    margin-right: 4px;
-                }
+                .header-search__form {    
+                    position: relative;
 
-                &--btn {
-                    width: 96px;
-                    justify-content: space-evenly;
-
-                    &>a {
-                        display: block;
-                        margin-top: 2px;
-                        font-size: 12px;
-                        line-height: 14px;
-                        color: #EBF2FF;
+                    &>select {
+                        right: 95px;
+                    }
+    
+                    &--btn {
+                        width: 96px;
+                        justify-content: space-evenly;
+    
+                        &>a {
+                            display: block;
+                            margin-top: 2px;
+                            font-size: 14px;
+                            line-height: 14px;
+                            color: #EBF2FF;
+                        }
                     }
                 }
             }
 
             &__list {
                 display: flex;
-                width: 200px;
+                width: 287px;
                 justify-content: space-between;
                 align-items: baseline;
+                margin-left: 33px;
 
                 &--item {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    width: 50px;
+                    height: 35px;
 
                     &>a {
                         margin-top: 2px;
@@ -216,6 +231,10 @@
                         line-height: 14px;
                         color: #0A0A0A;
                     }
+                }
+
+                &--item:last-child {
+                    width: 52px;
                 }
             }
         }

@@ -58,37 +58,40 @@
                 </div>
             </div>
 
-            <h2 class="review-title">Reviews and ratings<span>(25)</span></h2>
+            <div class="review-comments__block">
+                <div class="review-title-box">
+                    <h2 class="review-title">Reviews and ratings<span>(25)</span></h2>
 
-            <select name="" id="">
-                <option value="">Helpful first</option>
-                <option value=""></option>
-                <option value=""></option>
-            </select>
-
-            <div class="review-images">
-                <p class="review-images__title">Buyer Photos</p>
-                
-                <div class="review-images__items">
-                    <swiper class="review-swiper"
-                        :slides-per-view="2.5"
-                        :space-between="30"
-                        @swiper="onSwiper"
-                        @slideChange="onSlideChange"
-                    >
-                        <swiper-slide v-for="img in images" :key="img.id" class="review-swiper__slide">
-                            <div class="images">
-                                <img :src="img.item" alt="">
-                            </div>
-                        </swiper-slide>
-
-                    </swiper>
+                    <select name="" id="">
+                        <option value="">Helpful first</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
                 </div>
-            </div>
 
-            <div class="review-comments">
-                <div class="review-comments__user">
-                    <Users/>                    
+                <div class="review-images">
+                    <p class="review-images__title">Buyer Photos</p>
+                    
+                    <div class="review-images__items">
+                        <swiper class="review-swiper"
+                            :space-between="30"
+                            @swiper="onSwiper"
+                            @slideChange="onSlideChange"
+                        >
+                            <swiper-slide v-for="img in images" :key="img.id" class="review-swiper__slide" style="max-width: 148px; min-width: 79px; max-heigth: 187px; min-heigth: 100px; margin-right: 0px;">
+                                <div class="images">
+                                    <img :src="img.item" alt="">
+                                </div>
+                            </swiper-slide>
+
+                        </swiper>
+                    </div>
+                </div>
+
+                <div class="review-comments">
+                    <div class="review-comments__user">
+                        <Users/>                    
+                    </div>
                 </div>
             </div>
         </section>

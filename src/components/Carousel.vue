@@ -11,12 +11,11 @@
                 <swiper class="swiper"
                     :navigation="true"
                     :modules="modules"
-                    :slides-per-view="2.5"
                     :space-between="50"
                     @swiper="onSwiper"
                     @slideChange="onSlideChange"
                 >
-                    <swiper-slide style="min-width: 135px; max-width: 187px; margin-left: 15px; margin-right: unset;"
+                    <swiper-slide style="min-width: 135px; max-width: 187px; margin-left: 15px; margin-right: 0px;"
                         v-for="product in products"
                         :key="product.id"
                     >
@@ -27,7 +26,7 @@
                                     <span>{{ product.sale }}</span>
                                 </div>
                                 <a class="carousel-item__img--favorite">
-                                    <img src="@/assets/icons/like.svg">
+                                    <img src="@/assets/icons/like-slider.svg">
                                 </a>
                             </div>
                             <div class="carousel-item__descr">

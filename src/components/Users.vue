@@ -38,6 +38,18 @@
                 <img :src="items.item" alt="">
             </div>
         </div>
+
+        <div class="user-name__reactions">
+            <button @click="likeReaction = !likeReaction" class="user-name__reactions--like">
+                <img src="@/assets/icons/like-btn.svg">
+                <span v-if="likeReaction"  id="count-reaction">{{ like }}</span>
+                <span v-else id="count-reaction">{{ like }}</span>
+            </button>
+            <button @click="user.dislike++" class="user-name__reactions--dislike">
+                <img src="@/assets/icons/dislike-btn.svg">
+                <span id="count-reaction">{{ user.dislike }}</span>
+            </button>
+        </div>
     </div>
 </template>
 
@@ -45,6 +57,7 @@
 export default {
     data() {
         return {
+            like: 0,
             users: [
                 {
                     id: 1,
@@ -77,19 +90,25 @@ export default {
                             id: 5,
                             item: require("../assets/column_img/image44.png")
                         }
-                    ]
+                    ],
+                    like: 4,
+                    dislike: 0
                 },
                 {
                     id: 2,
                     name: "Marry J.",
                     img: "account2.png",
                     date: "23 Junuary 2021",
-                    advantages: "",
-                    disadvantages: "",
                     text: "I checked the goods according to the dimensional grid and everything fit, the delivery did not take much time, I am happy with everything, I will order from this seller.",
-                    slide: false
+                    like: 0,
+                    dislike: 2
                 }
             ]
+        }
+    },
+    methods: {
+        likeReaction() {
+            this.user.like++
         }
     }
 }

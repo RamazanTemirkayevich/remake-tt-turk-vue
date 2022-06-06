@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <div class="container">
+        <div class="header-container">
             <div class="header-nav">
                 <div class="header-nav__logo">
                     <img src="@/assets/TTlogo.svg" alt="">
