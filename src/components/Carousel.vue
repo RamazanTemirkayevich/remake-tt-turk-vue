@@ -5,17 +5,24 @@
 
             <div class="carousel-container">
 
-                <!-- <button @click="MovePrev" class="prev"></button>
-                <button @click="MoveNext" class="next"></button> -->
+                <button class="Prev">
+                    <img src="@/assets/icons/prev-slider.svg">
+                </button>
+                <button class="Next">
+                    <img src="@/assets/icons/next.svg">
+                </button>
 
-                <swiper class="swiper"
-                    :navigation="true"
+                <swiper class="mySwiper swiper" style="width: unset;"
+                    :navigation="{ nextEl: '.Next', prevEl: '.Prev' }"
+                    :slidesPerView="6.6"
+                    :spaceBetween="10"
+                    :slidesPerGroup="1"
                     :modules="modules"
-                    :space-between="50"
+                    clickable: true
                     @swiper="onSwiper"
                     @slideChange="onSlideChange"
                 >
-                    <swiper-slide style="min-width: 135px; max-width: 187px; margin-left: 15px; margin-right: 0px;"
+                    <swiper-slide class="swiper-item" style="min-width: 135px; max-width: 187px; margin-right: 0px;"
                         v-for="product in products"
                         :key="product.id"
                     >
@@ -34,6 +41,16 @@
                                 <p class="carousel-item__descr--text">{{ product.name }}</p>
                                 <a href="#" class="carousel-item__descr--link">{{ product.link }}</a>
                             </div>
+                            <div class="carousel-item__raiting">
+                                <div class="carousel-item__raiting--items">
+                                    <img src="@/assets/icons/star-active-desk.svg">
+                                    <img src="@/assets/icons/star-active-desk.svg">
+                                    <img src="@/assets/icons/star-active-desk.svg">
+                                    <img src="@/assets/icons/star-active-desk.svg">
+                                    <img src="@/assets/icons/star-desk.svg">
+                                </div>
+                                <p class="carousel-item__raiting--reviews">25 reviews</p>
+                            </div>
                         </div>
 
                         <div class="carousel-item-desktop">
@@ -50,17 +67,20 @@
 </template>
 
 <script>
+import SwiperCore, { Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import "swiper/swiper.scss";
+
+import "swiper/components/pagination/pagination.scss";
+import "swiper/components/navigation/navigation.scss";
+
+SwiperCore.use([Navigation, Pagination])
 
   export default {
     components: {
       Swiper,
       SwiperSlide
     },
-    methods: {
-
-    },
-    props: {},
     data() {
         return {
             products: [
@@ -158,15 +178,16 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
         }
     },
     setup() {
-      const onSwiper = (swiper) => {
-        console.log(swiper);
-      };
-      const onSlideChange = () => {
-        console.log('slide change');
-      };
+    //   const onSwiper = (swiper) => {
+    //     console.log(swiper);
+    //   };
+    //   const onSlideChange = () => {
+    //     console.log('slide change');
+    //   };
       return {
-        onSwiper,
-        onSlideChange
+        // onSwiper,
+        // onSlideChange,
+        modules: [Pagination, Navigation]
      };
     },
   };

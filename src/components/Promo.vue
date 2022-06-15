@@ -2,17 +2,19 @@
     <section class="promo">
         <div class="promo-img">
             <swiper
-                :navigation="true"
-                :modules="modules"
-                class="mySwipe swiperr"
+                :pagination="{
+                    type: 'fraction'
+                }"          
+                :modules="modules"                
+                class="mySwipe"
             >
                 <swiper-slide class="swiper-slide" v-for="items in images" :key="items.id">
                     <img :src="items.item">
                 </swiper-slide>
             </swiper>
-            <div class="promo-img__index">
+            <!-- <div class="promo-img__index">
                 <span>1</span>/<span>4</span>
-            </div>
+            </div> -->
         </div>
         <div class="promo-back">
             <a href="#">
@@ -97,12 +99,12 @@
                         </div>
                     </div>
                     <div class="promo-counter">
-                        <p class="promo-counter__title">Amount: <span></span></p>
+                        <p class="promo-counter__title">Amount: <span>{{ count }}</span></p>
                         <div class="promo-counter__elements">
                             <div class="counter">
-                                <button class="minus">-</button>
-                                <span>100</span>
-                                <button class="plus">+</button>
+                                <button @click="if (count > 1) count--;" class="minus">-</button>
+                                <span>{{ count }}</span>
+                                <button @click="count++" class="plus">+</button>
                             </div>
                             <p class="amount">12451 pcs. in stock</p>
                         </div>
@@ -110,9 +112,12 @@
                     <div class="promo-delivery">
                         <div class="promo-delivery-container">
                             <p class="promo-delivery-container__price">Delivery: 5,25 $</p>
-                            <select name="delivery" id="">
-                                <option value="1">To Isnabbul via PONNY EXPRESS</option>
-                            </select>
+                            <div class="promo-delivery-container__dropdown">
+                                <select name="delivery" id="">
+                                    <option value="1">To Isnabbul via PONNY EXPRESS</option>
+                                </select>
+                                <img src="@/assets/icons/dropdown.svg">
+                            </div>
                             <p class="promo-delivery-container__time">Estimated delivery time: 
                                 <span>25/08</span>
                                 <img src="@/assets/icons/question.svg" alt="">
@@ -211,6 +216,11 @@
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue"
 
+import "swiper/swiper.scss";
+
+import "swiper/components/pagination/pagination.scss";
+import "swiper/components/navigation/navigation.scss";
+
 import { Pagination, Navigation } from "swiper"
 export default {
     components: {
@@ -224,6 +234,7 @@ export default {
     },
     data() {
         return {
+            count: 1,
             images: [
                 {   
                     id: 1,

@@ -84,6 +84,10 @@
                 text-decoration-line: underline;
             }
         }
+
+        &__raiting {
+            display: none;
+        }
     }
 
     .carousel-item:first-child {
@@ -93,7 +97,8 @@
 
 @media (min-width: 1024px) {
     .carousel-item {
-        width: 187px;
+        // width: 130px;
+        width: unset;
         margin-right: unset;
 
         &__img {
@@ -125,11 +130,40 @@
             &--text {
                 font-size: 16px;
                 line-height: 19px;
+                margin-top: 8px;
             }
 
             &--link {
                 display: none;
             }
         }
+
+        &__raiting {
+            display: flex;
+            margin-top: 8px;
+
+            &--items {
+                display: flex;
+                justify-content: space-between;
+                width: 86.25px;
+
+                &>img {
+                    width: 15px;
+                }
+            }
+
+            &--reviews {
+                margin-left: 5px;
+                font-size: 13px;
+                line-height: 15px;
+                color: $gray-color;            
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .carousel-item {
+        // width: 187px;
     }
 }

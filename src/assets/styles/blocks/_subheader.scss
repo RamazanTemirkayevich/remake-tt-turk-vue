@@ -1,3 +1,7 @@
+$main-color: #2F76FF;
+$gray-color: #919191;
+$main-font: 'Roboto';
+
 @media (min-width: 320px) {
     .subheader {
         display: none;
@@ -134,5 +138,11 @@
             height: 0px;
             border: 1px solid #EEEEEE;            
         }
+    }
+}
+
+@media (min-width: 1440px) {
+    .subheader {
+        width: 1280px;
     }
 }

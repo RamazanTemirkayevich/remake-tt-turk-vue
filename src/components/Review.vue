@@ -54,27 +54,42 @@
                         </div>
                     </div>
 
-                    <a class="review-box__container--btn">Write a review</a>
+                    <a @click="() => ToggleModal('buttonTrigger')" class="review-box__container--btn">Write a review</a>
                 </div>
             </div>
 
             <div class="review-comments__block">
                 <div class="review-title-box">
                     <h2 class="review-title">Reviews and ratings<span>(25)</span></h2>
-
-                    <select name="" id="">
-                        <option value="">Helpful first</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
+                    
+                    <div class="review-select">
+                        <select name="" id="">
+                            <option value="">Helpful first</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
                 </div>
+
+                <hr class="review-comments__line">
 
                 <div class="review-images">
                     <p class="review-images__title">Buyer Photos</p>
+
+                    <button class="prev">
+                        <img src="@/assets/icons/prev-slider.svg">
+                    </button>
+                    <button class="next">
+                        <img src="@/assets/icons/next.svg">
+                    </button>
                     
                     <div class="review-images__items">
                         <swiper class="review-swiper"
-                            :space-between="30"
+                            :navigation="{ nextEl: '.next', prevEl: '.prev' }"
+                            :slidesPerView="5.5"
+                            :spaceBetween="10"
+                            :slidesPerGroup="1"
+                            :modules="modules"
                             @swiper="onSwiper"
                             @slideChange="onSlideChange"
                         >
@@ -88,20 +103,79 @@
                     </div>
                 </div>
 
+                <hr class="review-comments__line--02">
+
                 <div class="review-comments">
                     <div class="review-comments__user">
                         <Users/>                    
                     </div>
                 </div>
             </div>
+
+            <Modal class="modal"
+                v-if="ModalTriggers.buttonTrigger"
+                :ToggleModal="() => ToggleModal('buttonTrigger')"
+                >
+                <div class="modal-box">
+                    <div class="modal-box__container">
+                        <form action="">
+                            <div class="modal-box__container--title">
+                                <label class="modal-name">Write a review</label>
+                                <button class="modal-close" @click="() => ToggleModal('buttonTrigger')">
+                                    <img src="@/assets/icons/close.svg">
+                                </button>
+                            </div>
+                            <div class="modal-box__container--raiting">
+                                <p class="raiting-title">How would you rate the product?</p>
+                                <div class="raiting-stars">
+                                    <img src="@/assets/icons/star-active.svg">
+                                    <img src="@/assets/icons/star-active.svg">
+                                    <img src="@/assets/icons/star-active.svg">
+                                    <img src="@/assets/icons/star.svg">
+                                    <img src="@/assets/icons/star.svg">
+                                </div>
+                            </div>
+                            <div class="advantages-form">
+                                <p class="advantages-form__title">Advantages</p>
+                                <input type="text" placeholder="Product advantages">
+                            </div>
+                            <div class="disadvantages-form">
+                                <p class="disadvantages-form__title">Disadvantages</p>
+                                <input type="text" placeholder="Product disadvantages">
+                            </div>
+                            <div class="comment-form">
+                                <p class="comment-form__title">Comment</p>
+                                <textarea class="comment-form__input" rows="4" cols="47" placeholder="Comment about product"></textarea>
+                            </div>
+                            <div class="upload-images">
+                                <p class="upload-images__title">Upload product photos</p>
+                                <button class="upload-images__btn">
+                                    <img src="@/assets/icons/plus.svg">
+                                </button>
+                            </div>
+                            <a href="#" class="modal-btn">Send a review</a>
+                        </form>
+                    </div>
+                </div>
+            </Modal>
+
         </section>
     </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue'
 import Users from './Users.vue'
 
+import { ref } from 'vue';
+import Modal from './Modal.vue'
+import SwiperCore, { Pagination, Navigation } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import "swiper/swiper.scss";
+
+import "swiper/components/pagination/pagination.scss";
+import "swiper/components/navigation/navigation.scss";
+
+SwiperCore.use([Navigation, Pagination])
 export default {
     components: {
         Swiper,
@@ -134,8 +208,35 @@ export default {
                 {
                     id: 6,
                     item: require("../assets/column_img/image48.png")
+                },
+                {
+                    id: 7,
+                    item: require("../assets/column_img/image50.png")
+                },
+                {
+                    id: 8,
+                    item: require("../assets/column_img/image44.png")
+                },
+                {
+                    id: 9,
+                    item: require("../assets/column_img/image48.png")
                 }
             ]
+        }
+    },
+    setup() {
+        const ModalTriggers = ref({
+			buttonTrigger: true
+		});
+		const ToggleModal = (trigger) => {
+			ModalTriggers.value[trigger] = !ModalTriggers.value[trigger]
+		};
+
+        return {
+            modules: [Pagination, Navigation],
+            Modal,
+			ModalTriggers,
+			ToggleModal
         }
     }
 }

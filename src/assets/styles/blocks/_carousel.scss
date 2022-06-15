@@ -14,37 +14,20 @@
             margin-top: 15px;
             position: relative;
 
-            .prev {
-                position: absolute;
-                background: black;
-                width: 20px;
-                height: 20px;
-                left: 0;
-                z-index: 2;
-            }
-
-            .next {
-                position: absolute;
-                background: black;
-                width: 20px;
-                height: 20px;
-                right: 0;
-                z-index: 2;
+            &>button {
+                display: none;
             }
 
             .swiper {
-                overflow: auto;
-                
-                &-slide {
-                    margin-right: unset;
-                    max-width: 135px;
-                    margin-left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
 
-                }
-
-                &-slide:first-child {
-                    margin-left: 0;
-                }
+                // @media (min-width: 1024px) {
+                //     &-item {
+                //         width: 100px;
+                //     }
+                // }
             }
         }
 
@@ -63,6 +46,40 @@
 
         &-title {
             font-size: 28px;
+        }
+
+        &-container {
+            .Prev {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 40px;
+                left: -15px;
+                top: 35%;
+                background: #FFFFFF;
+                border: 1px solid #CDCDCD;
+                border-radius: 3px;
+                z-index: 2;
+                cursor: pointer;
+            }
+
+            .Next {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 40px;
+                right: -15px;
+                top: 35%;
+                background: #FFFFFF;
+                border: 1px solid #CDCDCD;
+                border-radius: 3px;
+                z-index: 2;
+                cursor: pointer;
+            }
         }
     }
 }

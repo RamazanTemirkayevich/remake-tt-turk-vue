@@ -1,6 +1,6 @@
 @media (min-width: 320px) {
     .review {
-        margin-top: 20px;
+        margin: 20px auto 100px auto;
 
 
         &-box {
@@ -132,21 +132,41 @@
         }
 
         &-title-box {
-            &>select {
-                margin-top: 10px;
+            .review-select {
                 width: 100%;
                 height: 40px;
-                border: 2px solid #EEEEEE;
-                border-radius: 3px;
-                -webkit-appearance: none;
-    
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 19px;
-                text-indent: 15px;
-                display: flex;
-                align-items: center;
-                color: $main-color;
+                position: relative;
+
+                &>select {
+                    margin-top: 10px;
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid #EEEEEE;
+                    border-radius: 3px;
+                    -webkit-appearance: none;
+                    outline: none;
+        
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-indent: 15px;
+                    display: flex;
+                    align-items: center;
+                    color: $main-color;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    right: 10px;
+                    pointer-events: none;
+                    display: block;
+                    transform: translateY(-50%);
+                    border-style: solid;
+                    border-width: 3px 3.5px 0 3.5px;
+                    border-color: #c4c4cf transparent transparent transparent;
+                }
             }
         }
 
@@ -166,14 +186,23 @@
             }
         }
 
+        &-comments__line, &-comments__line--02 {
+            display: none;
+        }
+
         &-images {
             margin-top: 25px;
+            position: relative;
 
             &__title {
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 19px;
                 color: $gray-color;
+            }
+
+            &>button {
+                display: none;
             }
 
             &__items {
@@ -211,8 +240,6 @@
                 flex-direction: column;
 
                 .user {
-                    margin-top: 25px;
-
                     &-name {
                         display: flex;
                         flex-direction: row;
@@ -316,6 +343,10 @@
                                     border-radius: 5px;
                                 }
                             }
+
+                            &--item:last-child {
+                                display: none;
+                            }
                         }
 
                         &__reactions {
@@ -343,6 +374,10 @@
                         }
                     }
                 }
+
+                .user:last-child {
+                    margin-top: 25px;
+                }
             }
         }
     }
@@ -350,14 +385,15 @@
 
 @media (min-width: 1024px) {
     .review {
+        margin: 75px auto 50px auto;
         width: 100%;
         display: flex;
         justify-content: space-between;
         flex-direction: row-reverse;
 
         &-box {
-            width: 300px;
-            height: 309px;
+            width: 298px;
+            height: 307px;
         }
 
         &-comments__block {
@@ -365,26 +401,66 @@
             width: 550px;
         }
 
+        &-comments {
+            &__user {
+                .user:last-child {
+                    &>hr {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &-comments__line {
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+            height: 0;
+            border: 1px solid #EEEEEE;
+            transform: rotate(0.05deg);
+        }
+
+        &-comments__line--02 {
+            display: block;
+            margin-top: 25px;
+            width: 100%;
+            height: 0;
+            border: 1px solid #EEEEEE;
+            transform: rotate(0.05deg);
+        }
+
         &-title-box {
             width: 100%;
             display: flex;
             justify-content: space-between;
 
-            &>select {
-                margin-top: 10px;
+            .review-select {
                 width: 200px;
                 height: 40px;
-                border: 2px solid #EEEEEE;
-                border-radius: 3px;
-                -webkit-appearance: none;
 
-                font-weight: 500;
-                font-size: 16px;
-                line-height: 19px;
-                text-indent: 15px;
-                display: flex;
-                align-items: center;
-                color: $main-color;
+                &>select {
+                    margin-top: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid #EEEEEE;
+                    border-radius: 3px;
+                    -webkit-appearance: none;
+    
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-indent: 15px;
+                    display: flex;
+                    align-items: center;
+                    color: $main-color;
+                    outline: none;
+                }
+            }
+
+            @media (min-width: 1440px) {
+                .review-select {
+                    width: 240px;
+                }
             }
         }
 
@@ -393,6 +469,116 @@
 
             &>span {
                 font-size: 28px;
+            }
+        }
+
+        &-images {
+            &>button {
+                display: block;
+            }
+
+            .prev {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 40px;
+                left: -15px;
+                top: 50%;
+                background: #FFFFFF;
+                border: 1px solid #CDCDCD;
+                border-radius: 3px;
+                z-index: 2;
+                cursor: pointer;
+            }
+
+            .next {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 40px;
+                right: -15px;
+                top: 50%;
+                background: #FFFFFF;
+                border: 1px solid #CDCDCD;
+                border-radius: 3px;
+                z-index: 2;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .review {
+        .review-comments__block {
+            width: 850px;
+        }
+
+        &-comments {
+            &__user {
+                .user {
+                    &-name__img {
+                        width: 65px;
+                    }
+
+                    &-name__title {
+                        margin-top: 4.5px;
+                        width: 256px;
+                        align-items: unset;
+
+                        &--name {
+                            font-size: 24px;
+                            line-height: 28px;
+                        }
+
+                        &--stars {
+                            width: 112px;
+
+                            &>img {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+
+                        &--date {
+                            font-size: 18px;
+                            line-height: 21px;
+                        }
+                    }
+
+                    &-name__text {
+                        margin-left: 80px;
+                        width: 704px;
+
+                        &--advantages, &--disadvantages, &--title {
+                            font-size: 18px;
+                            line-height: 22px;
+
+                            &>span {
+                                font-size: 18px;
+                                line-height: 22px;
+                            }
+                        }
+                    }
+
+                    &-name__images {
+                        margin-left: 80px;
+                        width: 361px;
+
+                        &--item:last-child {
+                            display: flex;
+                            width: 52px;
+                        }
+                    }
+
+                    &-name__reactions {
+                        margin-left: 80px;
+                    }
+                }
             }
         }
     }

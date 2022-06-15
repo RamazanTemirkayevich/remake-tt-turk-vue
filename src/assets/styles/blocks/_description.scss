@@ -14,13 +14,15 @@
             width: 100%;
 
             &__title {
-                margin-top: 15px;
-                font-size: 16px;
-                line-height: 22px;
-                color: #404040;
+                &>span {
+                    margin-top: 15px;
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #404040;
 
-                .hide-text {
-                    display: none;
+                    .hide-text {
+                        display: none;
+                    }
                 }
             }
         }
@@ -123,13 +125,17 @@
 
         &-text {
             width: 95%;
+            margin-top: 25px;
 
             &__title {
-                font-size: 20px;
-                line-height: 30px;
 
-                .hide-text {
-                    display: block;
+                &>span {
+                    font-size: 20px;
+                    line-height: 30px;
+
+                    .hide-text {
+                        display: block;
+                    }
                 }
             }
         }
@@ -214,6 +220,22 @@
                 .box-items:last-child {
                     &>dl:last-child {
                         display: none;
+                    }
+                }
+            }
+
+            @media (min-width: 1440px) {
+                &__box {
+                    width: 1064px;
+
+                    .box-items {
+                        width: 482px;
+
+                        &>dl {
+                            &>dt {
+                                width: 65%;
+                            }
+                        }
                     }
                 }
             }
