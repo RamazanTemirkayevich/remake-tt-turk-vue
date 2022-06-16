@@ -12,9 +12,6 @@
                     <img :src="items.item">
                 </swiper-slide>
             </swiper>
-            <!-- <div class="promo-img__index">
-                <span>1</span>/<span>4</span>
-            </div> -->
         </div>
         <div class="promo-back">
             <a href="#">
@@ -30,7 +27,7 @@
         <div class="container">
             <div class="promo-container">
                 <div class="promo-img__desktop">
-                    <div class="promo-img__desktop--column">
+                    <!-- <div class="promo-img__desktop--column">
                         <div class="column-img">
                             <img src="@/assets/column_img/image44.png" alt="column img">
                         </div>
@@ -53,7 +50,21 @@
 
                     <div class="promo-img__desktop--main">
                         <img src="@/assets/image44.png" alt="promo image">
-                    </div>
+                    </div> -->
+
+                    <Hooper>
+                        <slide>
+                            <img src="@/assets/column_img/image44.png" alt="">
+                        </slide>
+                        <slide>
+                            <img src="@/assets/column_img/image48.png" alt="">
+                        </slide>
+                        <slide>
+                            <img src="@/assets/column_img/image49.png" alt="">
+                        </slide>
+                        ...
+                    </Hooper>
+                    
                 </div>
 
                 <div class="promo-descr">
@@ -215,22 +226,20 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue"
+import { Hooper, Slide } from 'hooper';
+import 'hooper/dist/hooper.css';
 
 import "swiper/swiper.scss";
 
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/navigation/navigation.scss";
 
-import { Pagination, Navigation } from "swiper"
 export default {
     components: {
         Swiper,
-        SwiperSlide
-    },
-    setup() {
-        return {
-        modules: [Pagination, Navigation],
-        };
+        SwiperSlide,
+        Hooper,
+        Slide
     },
     data() {
         return {
@@ -258,7 +267,16 @@ export default {
                     id: 1,
                     item: "Blue"
                 }
-            ]
+            ],
+            settings: {
+                "dots": true,
+                "dotsClass": "slick-dots custom-dot-class",
+                "edgeFriction": 0.35,
+                "infinite": false,
+                "speed": 500,
+                "slidesToShow": 1,
+                "slidesToScroll": 1
+            }
         }
     }
 }
